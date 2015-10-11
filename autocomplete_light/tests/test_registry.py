@@ -149,10 +149,6 @@ class RegistryGetAutocompleteFromArgTestCase(TestCase):
         a = self.registry.get_autocomplete_from_arg(Generic)
         self.assertEqual(a, Generic)
 
-    def test_default_generic(self):
-        a = self.registry.get_autocomplete_from_arg()
-        self.assertTrue(issubclass(a, Generic))
-
     def test_model_picked_up_from_autocomplete_class_model(self):
         # GitHub issue #313
         class TestModel(models.Model):

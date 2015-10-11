@@ -218,7 +218,7 @@ class AutocompleteRegistry(dict):
         except KeyError:
             raise AutocompleteNotRegistered(name, self)
 
-    def get_autocomplete_from_arg(self, arg=None):
+    def get_autocomplete_from_arg(self, arg):
         from .autocomplete.base import AutocompleteInterface
         if isinstance(arg, six.string_types):
             return self[arg]
@@ -228,8 +228,6 @@ class AutocompleteRegistry(dict):
             return self.autocomplete_for_model(arg.__class__)
         elif isinstance(arg, type) and issubclass(arg, AutocompleteInterface):
             return arg
-        elif arg is None:
-            return self.default_generic
         else:
             raise AutocompleteArgNotUnderstood(arg, self)
 

@@ -126,7 +126,7 @@ class WidgetBase(object):
         ``autocomplete_light/widget.html``.
     """
 
-    def __init__(self, autocomplete=None, widget_js_attributes=None,
+    def __init__(self, autocomplete, widget_js_attributes=None,
                  autocomplete_js_attributes=None, extra_context=None,
                  registry=None, widget_template=None, widget_attrs=None):
         self._registry = registry
